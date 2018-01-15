@@ -24,4 +24,12 @@ void loop()
 	rightBottomValue = analogRead(ldrRightBottom);
 
 	Serial.print(leftTopValue);
+	Serial.print("\t");
+	Serial.print(leftBottomValue);
+	Serial.print("\t");
+	Serial.print(rightTopValue);
+	Serial.print("\t");
+	Serial.print(rightBottomValue);
+	Serial.println();
+	delay(100);
 }
