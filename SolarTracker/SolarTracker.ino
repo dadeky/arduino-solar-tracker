@@ -1,18 +1,24 @@
 #include "Arduino.h"
+#include "Actuator.h"
 
-int ldrLeftTop = A0;
-int ldrLeftBottom = A1;
-int ldrRightTop = A2;
-int ldrRightBottom = A3;
+const int ldrLeftTop = A0;
+const int ldrLeftBottom = A1;
+const int ldrRightTop = A2;
+const int ldrRightBottom = A3;
 
 int leftTopValue;
 int leftBottomValue;
 int rightTopValue;
 int rightBottomValue;
 
+Actuator xActuator;
+Actuator yActuator;
+
 void setup()
 {
 	Serial.begin(9600);
+	Actuator xActuator(1, 255);
+	Actuator yActuator(2, 255);
 }
 
 
@@ -23,13 +29,15 @@ void loop()
 	rightTopValue = analogRead(ldrRightTop);
 	rightBottomValue = analogRead(ldrRightBottom);
 
-	Serial.print(leftTopValue);
-	Serial.print("\t");
-	Serial.print(leftBottomValue);
-	Serial.print("\t");
-	Serial.print(rightTopValue);
-	Serial.print("\t");
-	Serial.print(rightBottomValue);
-	Serial.println();
-	delay(100);
+	xActuator.extend(1);
+
+//	Serial.print(leftTopValue);
+//	Serial.print("\t");
+//	Serial.print(leftBottomValue);
+//	Serial.print("\t");
+//	Serial.print(rightTopValue);
+//	Serial.print("\t");
+//	Serial.print(rightBottomValue);
+//	Serial.println();
+//	delay(100);
 }

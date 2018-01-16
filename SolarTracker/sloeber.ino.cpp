@@ -2,10 +2,11 @@
 //This is a automatic generated file
 //Please do not modify this file
 //If you touch this file your change will be overwritten during the next build
-//This file has been generated on 2018-01-13 20:49:12
+//This file has been generated on 2018-01-16 10:47:26
 
 #include "Arduino.h"
 #include "Arduino.h"
+#include "Actuator.h"
 
 void setup() ;
 void loop() ;
