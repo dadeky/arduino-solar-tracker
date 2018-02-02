@@ -1,4 +1,4 @@
-update=13-Jan-18 18:32:01
+update=27-Jan-18 21:15:01
 version=1
 last_client=kicad
 [pcbnew]
@@ -62,3 +62,4 @@ LibName30=atmel
 LibName31=contrib
 LibName32=valves
 LibName33=lib/arduino
+LibName34=lib/Zimprich

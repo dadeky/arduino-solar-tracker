@@ -32,6 +32,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:arduino
+LIBS:Zimprich
 LIBS:solar-tracker-cache
 EELAYER 25 0
 EELAYER END
@@ -318,7 +319,7 @@ L Conn_01x06 J1
 U 1 1 5A5A92AF
 P 6700 800
 F 0 "J1" H 6700 1100 50  0000 C CNN
-F 1 "H-bridge1-connector" V 6779 761 50  0000 C TNN
+F 1 "horiz actuator driver conn" V 6779 761 50  0000 C TNN
 F 2 "" H 6700 800 50  0001 C CNN
 F 3 "" H 6700 800 50  0001 C CNN
 	1    6700 800 
@@ -329,10 +330,120 @@ L Conn_01x06 J2
 U 1 1 5A5A956C
 P 7900 800
 F 0 "J2" H 7900 1100 50  0000 C CNN
-F 1 "H-bridge2-connector" V 7979 761 50  0000 C TNN
+F 1 "vert actuator driver conn" V 7979 761 50  0000 C TNN
 F 2 "" H 7900 800 50  0001 C CNN
 F 3 "" H 7900 800 50  0001 C CNN
 	1    7900 800 
 	0    -1   -1   0   
 $EndComp
+$Comp
+L DC-DC_Stepdown U2
+U 1 1 5A6CE95B
+P 1350 1000
+F 0 "U2" H 1350 1200 60  0000 C BNN
+F 1 "DC-DC_Stepdown" H 1350 1000 16  0000 C CNN
+F 2 "" H 1350 1000 60  0000 C CNN
+F 3 "" H 1350 1000 60  0000 C CNN
+	1    1350 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A6CED94
+P 600 900
+F 0 "#PWR?" H 600 650 50  0001 C CNN
+F 1 "GND" H 600 750 50  0000 C CNN
+F 2 "" H 600 900 50  0001 C CNN
+F 3 "" H 600 900 50  0001 C CNN
+	1    600  900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A6CEDC3
+P 2000 900
+F 0 "#PWR?" H 2000 650 50  0001 C CNN
+F 1 "GND" H 2000 750 50  0000 C CNN
+F 2 "" H 2000 900 50  0001 C CNN
+F 3 "" H 2000 900 50  0001 C CNN
+	1    2000 900 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 900  1700 900 
+Wire Wire Line
+	600  900  1000 900 
+$Comp
+L +12V #PWR?
+U 1 1 5A6CF160
+P 1800 1100
+F 0 "#PWR?" H 1800 950 50  0001 C CNN
+F 1 "+12V" H 1800 1240 50  0000 C CNN
+F 2 "" H 1800 1100 50  0001 C CNN
+F 3 "" H 1800 1100 50  0001 C CNN
+	1    1800 1100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1800 1100 1700 1100
+$Comp
+L +24V #PWR?
+U 1 1 5A6CF286
+P 850 1100
+F 0 "#PWR?" H 850 950 50  0001 C CNN
+F 1 "+24V" H 850 1240 50  0000 C CNN
+F 2 "" H 850 1100 50  0001 C CNN
+F 3 "" H 850 1100 50  0001 C CNN
+	1    850  1100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	850  1100 1000 1100
+$Comp
+L Conn_01x02 J1
+U 1 1 5A6CFD2E
+P 2650 900
+F 0 "J1" H 2650 1000 50  0000 C CNN
+F 1 "Power connector" V 2750 800 50  0000 C CNN
+F 2 "" H 2650 900 50  0001 C CNN
+F 3 "" H 2650 900 50  0001 C CNN
+	1    2650 900 
+	0    -1   -1   0   
+$EndComp
+$Comp
+L +24V PWR1
+U 1 1 5A6D0C68
+P 2900 1200
+F 0 "PWR1" H 2900 1050 50  0001 C CNN
+F 1 "+24V" H 2900 1340 50  0000 C CNN
+F 2 "" H 2900 1200 50  0001 C CNN
+F 3 "" H 2900 1200 50  0001 C CNN
+	1    2900 1200
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A6D0C9A
+P 2650 1200
+F 0 "#PWR?" H 2650 950 50  0001 C CNN
+F 1 "GND" H 2650 1050 50  0000 C CNN
+F 2 "" H 2650 1200 50  0001 C CNN
+F 3 "" H 2650 1200 50  0001 C CNN
+	1    2650 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 1100 2650 1200
+Wire Wire Line
+	2750 1100 2750 1200
+Wire Wire Line
+	2750 1200 2900 1200
+Text GLabel 5200 2100 2    60   Input ~ 0
+horizontalActuatorPwm
+Wire Wire Line
+	4850 2100 5200 2100
+Text GLabel 5200 2300 2    60   Input ~ 0
+verticalActuatorPwm
+Wire Wire Line
+	4850 2300 5200 2300
 $EndSCHEMATC

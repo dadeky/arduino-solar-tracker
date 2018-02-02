@@ -19,12 +19,17 @@ Actuator::~Actuator() {
 	// TODO Auto-generated destructor stub
 }
 
-void Actuator::extend(int numOfDegrees)
+void Actuator::extend(int numOfUnits)
 {
 
 }
 
-void Actuator::contract(int numOfDegrees)
+void Actuator::contract(int numOfUnits)
+{
+
+}
+
+void Actuator::contractToInitial()
 {
 
 }

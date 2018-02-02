@@ -12,9 +12,10 @@ class Actuator {
 public:
 	Actuator(int pwmPin, int speed);
 	virtual ~Actuator();
-	void extend(int numOfDegrees);
-	void contract(int numOfDegrees);
+	void extend(int numOfUnits);
+	void contract(int numOfUnits);
 	void stop();
+	void contractToInitial();
 
 private:
 	int actuatorPwmPin;

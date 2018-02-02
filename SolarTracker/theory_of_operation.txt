@@ -1,0 +1,8 @@
+Prvo čitamo x os senzore. Ako nisu jednaki onda mičemo x actuator za 1 stupanj
+sve dok se ne izjednače.
+
+Onda čitamo y snzore. Ako nisu jednaki onda mičemo y actuator za jedan stupanj
+i sve tako dok se ne izjednače.
+
+Tu je i tolerancija. Znači x ili y senzori nikad niti neće biti isti,
+nego će biti unutar određene tolerancije. Tako da i to treba uzeti u obzir.
