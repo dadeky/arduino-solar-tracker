@@ -7,7 +7,13 @@ const int ldrRightTopPin = A2;
 const int ldrRightBottomPin = A3;
 
 const int verticalActuatorPwmPin = 3;
+const int vertContractingDirPin = 2;
+const int vertExtendingDirPin = 4;
+
 const int horizontalActuatorPwmPin = 5;
+const int horizContractingDir = 7;
+const int horizExtendingDir = 8;
+
 const int verticalActuatorSpeed = 100;
 const int horizontalActuatorSpeed = 100;
 
