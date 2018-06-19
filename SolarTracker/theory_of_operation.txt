@@ -6,3 +6,9 @@ i sve tako dok se ne izjednače.
 
 Tu je i tolerancija. Znači x ili y senzori nikad niti neće biti isti,
 nego će biti unutar određene tolerancije. Tako da i to treba uzeti u obzir.
+
+
+
+
+
+SDE3 dual axis slew drive for solar tracker
