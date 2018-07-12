@@ -35,10 +35,10 @@ CPP_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 . \
-core\core \
-libraries\Servo\src\avr \
-libraries\Servo\src\nrf52 \
-libraries\Servo\src\sam \
-libraries\Servo\src\samd \
-libraries\Servo\src\stm32f4 \
+core/core \
+libraries/Servo/src/avr \
+libraries/Servo/src/nrf52 \
+libraries/Servo/src/sam \
+libraries/Servo/src/samd \
+libraries/Servo/src/stm32f4 \
 

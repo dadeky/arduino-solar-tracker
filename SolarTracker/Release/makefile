@@ -70,24 +70,24 @@ all: SolarTracker
 SolarTracker: $(HEX)
 	@echo 'Building target: $@'
 	@echo 'Printing size:'
-	"D:\eclipse_oxygen\eclipse\/arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-size" -A "D:/git/arduino-solar-tracker/SolarTracker/Release/SolarTracker.elf"
+	"D:\eclipse_photon\/arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-size" -A "D:/git/arduino-solar-tracker/SolarTracker/Release/SolarTracker.elf"
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 D:\git\arduino-solar-tracker\SolarTracker\Release\arduino.ar: $(AR_OBJ)
 	@echo 'Starting archiver'
-	"D:\eclipse_oxygen\eclipse\/arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-gcc-ar" rcs    D:/git/arduino-solar-tracker/SolarTracker/Release/arduino.ar $(AR_OBJ)
+	"D:\eclipse_photon\/arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-gcc-ar" rcs    D:/git/arduino-solar-tracker/SolarTracker/Release/arduino.ar $(AR_OBJ)
 	@echo 'Finished building: $@'
 	@echo ' '
 
 SolarTracker.elf: $(LINK_OBJ) $(AR)
 	@echo 'Starting combiner'
-	"D:\eclipse_oxygen\eclipse\/arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-gcc" -Wall -Wextra -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=atmega328p -o "D:\git\arduino-solar-tracker\SolarTracker/Release/SolarTracker.elf"   $(LINK_OBJ)   D:/git/arduino-solar-tracker/SolarTracker/Release/arduino.ar  "-LD:\git\arduino-solar-tracker\SolarTracker/Release" -lm
+	"D:\eclipse_photon\/arduinoPlugin/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/bin/avr-gcc" -Wall -Wextra -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=atmega328p -o "D:\git\arduino-solar-tracker\SolarTracker/Release/SolarTracker.elf"   $(LINK_OBJ)   D:/git/arduino-solar-tracker/SolarTracker/Release/arduino.ar  "-LD:\git\arduino-solar-tracker\SolarTracker/Release" -lm
 	@echo 'Finished building: $@'
 	@echo ' '
 
 SolarTracker.hex: $(ELF)
-	@echo 'Do all objcopy commands'
+	@echo 'Create eeprom image'
 	${A.RECIPE.OBJCOPY.EEP.PATTERN}
 	${A.RECIPE.OBJCOPY.HEX.PATTERN}
 	@echo 'Finished building: $@'
@@ -99,5 +99,6 @@ clean:
 	-@echo ' '
 
 .PHONY: all clean dependents
+.SECONDARY:
 
 -include ..\makefile.targets
